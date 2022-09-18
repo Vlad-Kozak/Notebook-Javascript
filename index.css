@@ -1,0 +1,41 @@
+@import "modern-normalize/modern-normalize.css";
+@import "./css/reset.css";
+@import "./css/vars.css";
+@import "./css/table.css";
+@import "./css/table-notes.css";
+@import "./css/table-categories.css";
+@import "./css/table-archived-notes.css";
+
+section:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.container {
+  padding: 0 20px;
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.btn {
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  padding: 5px 0;
+  border-radius: 8px;
+  background-color: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+.btn-with-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-icon {
+  width: 30px;
+  height: 30px;
+}

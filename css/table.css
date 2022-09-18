@@ -1,0 +1,54 @@
+.titles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--title-bg);
+  font-size: 18px;
+  color: var(--title-color);
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--notes-bg);
+  color: var(--notes-text-color);
+}
+
+.title {
+  padding: 10px;
+}
+
+.field {
+  padding: 15px 10px;
+}
+
+.icon {
+  width: 50px;
+}
+
+.name {
+  width: 176px;
+}
+
+.created {
+  width: 176px;
+}
+
+.category {
+  width: 176px;
+}
+
+.content {
+  width: 176px;
+}
+
+.dates {
+  width: 176px;
+}
+
+.edit,
+.delete,
+.archive {
+  width: 30px;
+}
