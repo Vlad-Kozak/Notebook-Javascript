@@ -1,4 +1,10 @@
-import { makeMarkupCategories, makeMarkupNotes } from "./markup.js";
+import {
+  makeMarkupAddForm,
+  makeMarkupCategories,
+  makeMarkupEditForm,
+  makeMarkupNoteModalCategories,
+  makeMarkupNotes,
+} from "./markup.js";
 import { refs } from "./refs.js";
 
 export function renderAll(notes, categories) {
@@ -38,6 +44,35 @@ export function renderCategories(notes, categories) {
     })
     .join("");
   refs.tableCategories.innerHTML = markup;
+}
+
+export function renderModalCategories(categories, id) {
+  const markup = categories
+    .map((el) => {
+      return el.id === id
+        ? makeMarkupNoteModalCategories(el, true)
+        : makeMarkupNoteModalCategories(el);
+    })
+    .join("");
+  refs.categorySelection.innerHTML = markup;
+}
+
+export function renderAddForm(categories) {
+  const markup = makeMarkupAddForm();
+  refs.noteFormName.innerHTML = markup.name;
+  refs.noteFormContent.innerHTML = markup.content;
+  refs.noteFormSubmitBtn.innerHTML = markup.btnIcon;
+  renderModalCategories(categories);
+}
+
+export function renderEditForm(notes, categories, id) {
+  const note = notes.find((el) => el.id === id);
+  const markup = makeMarkupEditForm(note.name, note.content);
+  refs.noteFormName.innerHTML = markup.name;
+  refs.noteFormContent.innerHTML = markup.content;
+  refs.noteFormSubmitBtn.innerHTML = markup.btnIcon;
+  refs.noteForm.dataset.id = id;
+  renderModalCategories(categories, note.categoryId);
 }
 
 function getNotesCount(notes) {

@@ -33,8 +33,7 @@ export function makeMarkupNotes(
         <img class="btn-icon delete-btn-js" src="./images/delete.svg" alt=""  data-id="${id}"/>
       </button>
     </div>
-  </li>
-`;
+  </li>`;
 }
 
 export function makeMarkupCategories(
@@ -52,6 +51,39 @@ export function makeMarkupCategories(
     <div class="field category">${name}</div>
     <div class="field active">${countActive ?? 0}</div>
     <div class="field archived">${countArchived ?? 0}</div>
-  </li>
-`;
+  </li>`;
+}
+
+export function makeMarkupAddForm() {
+  return {
+    name: `Name
+          <input class="note-form-name-input" type="text" name="name" />`,
+    content: `Content
+            <textarea class="note-form-content-input" name="content"></textarea>`,
+    btnIcon: `<img class="note-form-submit-icon" src="./images/add.svg" alt="" />`,
+  };
+}
+
+export function makeMarkupEditForm(name, content) {
+  return {
+    name: `Name
+          <input class="note-form-name-input" type="text" name="name" value="${name}"/>`,
+    content: `Content
+            <input class="note-form-content-input" name="content" value="${content}" />`,
+    btnIcon: `<img class="note-form-submit-icon" src="./images/confirm.svg" alt="" />`,
+  };
+}
+
+export function makeMarkupNoteModalCategories({ id, name }, checked) {
+  return `
+  <label class="note-form-category-label">
+    <input
+      class="note-form-category-input"
+      name="category"
+      type="radio"
+      value="${id}"
+      ${checked && "checked"}
+    />
+    ${name}
+  </label>`;
 }

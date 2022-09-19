@@ -5,7 +5,11 @@
 @import "./css/table-notes.css";
 @import "./css/table-categories.css";
 @import "./css/table-archived-notes.css";
-@import "./css/create-note-form.css";
+@import "./css/note-modal.css";
+
+body.modal-open {
+  overflow: hidden;
+}
 
 section:not(:last-child) {
   margin-bottom: 30px;

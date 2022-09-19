@@ -56,60 +56,6 @@
         <button class="btn add-btn add-btn-js" type="button">
           Create Note
         </button>
-        <div class="create-note-modal">
-          <form class="create-note-form">
-            <label class="create-name-label">
-              Name
-              <input class="create-name-input" type="text" />
-            </label>
-            <div class="create-category-box">
-              Category
-              <div class="create-category-wrap">
-                <label class="create-category-label">
-                  White
-                  <input
-                    class="create-category-input"
-                    name="category"
-                    type="radio"
-                    value="red"
-                  />
-                </label>
-                <label class="create-category-label">
-                  White
-                  <input
-                    class="create-category-input"
-                    name="category"
-                    type="radio"
-                    value="red"
-                  />
-                </label>
-                <label class="create-category-label">
-                  White
-                  <input
-                    class="create-category-input"
-                    name="category"
-                    type="radio"
-                    value="red"
-                  />
-                </label>
-              </div>
-            </div>
-            <label class="create-content-label">
-              Content
-              <textarea class="create-content-input" name="content"></textarea>
-            </label>
-            <button class="btn-with-icon create-note-btn" type="submit">
-              <img class="create-note-btn-icon" src="./images/add.svg" alt="" />
-            </button>
-          </form>
-          <button class="close-create-note-modal-btn">
-            <img
-              class="close-create-note-modal-btn-icon"
-              src="./images/close.svg"
-              alt=""
-            />
-          </button>
-        </div>
       </div>
     </section>
 
@@ -186,6 +132,45 @@
         </div>
       </div>
     </section>
+
+    <div class="modal-backdrop is-hidden">
+      <div class="note-modal">
+        <form class="note-form note-form-js">
+          <label class="note-form-name-label">
+            <!-- Name
+            <input class="note-form-name-input" type="text" name="name" /> -->
+          </label>
+          <div class="note-form-category-box">
+            Category
+            <div class="note-form-category-wrap note-form-category-wrap-js">
+              <!-- <label class="note-form-category-label">
+                White
+                <input
+                  class="note-form-category-input"
+                  name="category"
+                  type="radio"
+                  value="red"
+                />
+              </label> -->
+            </div>
+          </div>
+          <label class="note-form-content-label">
+            <!-- Content
+            <textarea class="note-form-content-input" name="content"></textarea> -->
+          </label>
+          <button class="note-form-submit" type="submit">
+            <!-- <img class="note-form-submit-icon" src="./images/add.svg" alt="" /> -->
+          </button>
+        </form>
+        <button class="close-note-modal-btn">
+          <img
+            class="close-note-modal-btn-icon"
+            src="./images/close.svg"
+            alt=""
+          />
+        </button>
+      </div>
+    </div>
 
     <script src="./js/index.js" type="module"></script>
   </body>

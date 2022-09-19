@@ -1,47 +1,108 @@
-import { nanoid } from "https://cdn.jsdelivr.net/npm/nanoid/nanoid.js";
-
 import data from "./data.js";
 import { refs } from "./refs.js";
-import { renderAll } from "./render.js";
+import { renderAddForm, renderAll, renderEditForm } from "./render.js";
+import {
+  closeModalByClickOnBackdrop,
+  closeModalByEsc,
+  createNote,
+  deleteNote,
+  editNote,
+  toggleArchiveNote,
+  toggleModal,
+} from "./actions.js";
 
-let notes = data.notes;
-let categories = data.categories;
+export let notes = data.notes;
+export let categories = data.categories;
 
 renderAll(notes, categories);
 
 document.body.addEventListener("click", (e) => {
-  if (e.target.classList.contains("delete-btn-js")) {
-    deleteNote(e.target.dataset.id);
-  }
-  if (e.target.classList.contains("archive-btn-js")) {
-    toggleArchiveNote(e.target.dataset.id);
-  }
+  handleDeleteNoteBtn(e);
+  handleArchiveNoteBtn(e);
+  handleEditNoteBtn(e);
 });
 
-function toggleArchiveNote(id) {
-  notes = notes.map((el) => {
-    if (el.id === id) {
-      el.archived = !el.archived;
-    }
-    return el;
-  });
-  console.log(notes);
-  renderAll(notes, categories);
+refs.addNoteBtn.addEventListener("click", handleAddNoteBtn);
+
+function handleDeleteNoteBtn(e) {
+  if (e.target.classList.contains("delete-btn-js")) {
+    notes = deleteNote(e.target.dataset.id);
+    renderAll(notes, categories);
+  }
 }
 
-function deleteNote(id) {
-  notes = notes.filter((el) => el.id !== id);
-  renderAll(notes, categories);
+function handleArchiveNoteBtn(e) {
+  if (e.target.classList.contains("archive-btn-js")) {
+    notes = toggleArchiveNote(e.target.dataset.id);
+    renderAll(notes, categories);
+  }
 }
 
-function createNote({ name, categoryId, content }) {
-  notes.push({
-    id: nanoid(),
-    name,
-    created: Date.now,
-    categoryId,
-    content,
-    dates: "",
-    archived: false,
+function handleEditNoteBtn(e) {
+  if (e.target.classList.contains("edit-btn-js")) {
+    renderEditForm(notes, categories, e.target.dataset.id);
+    toggleModal();
+    window.addEventListener("keydown", closeModalByEsc);
+    refs.closeNoteModalBtn.addEventListener("click", toggleModal);
+    refs.modalBackdrop.addEventListener("click", closeModalByClickOnBackdrop);
+    refs.noteForm.addEventListener("submit", handleEditSubmitNoteBtn);
+  }
+}
+
+function handleAddNoteBtn() {
+  renderAddForm(categories);
+  toggleModal();
+  window.addEventListener("keydown", closeModalByEsc);
+  refs.closeNoteModalBtn.addEventListener("click", toggleModal);
+  refs.modalBackdrop.addEventListener("click", closeModalByClickOnBackdrop);
+  refs.noteForm.addEventListener("submit", handleAddSubmitNoteBtn);
+}
+
+function handleAddSubmitNoteBtn(e) {
+  e.preventDefault();
+
+  const { name, category, content } = e.target;
+
+  if (
+    name.value.trim().length === 0 ||
+    category.value.length === 0 ||
+    content.value.trim().length === 0
+  ) {
+    return console.log("error");
+  }
+
+  createNote({
+    name: name.value,
+    categoryId: category.value,
+    content: content.value,
   });
+
+  e.target.reset();
+  toggleModal();
+}
+
+function handleEditSubmitNoteBtn(e) {
+  e.preventDefault();
+
+  const { name, category, content } = e.target;
+
+  if (
+    name.value.trim().length === 0 ||
+    category.value.length === 0 ||
+    content.value.trim().length === 0
+  ) {
+    return console.log("error");
+  }
+
+  notes = editNote({
+    id: e.target.dataset.id,
+    name: name.value,
+    categoryId: category.value,
+    content: content.value,
+  });
+
+  renderAll(notes, categories);
+
+  e.target.reset();
+  toggleModal();
 }
