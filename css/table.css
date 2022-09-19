@@ -1,17 +1,23 @@
 .titles {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   background-color: var(--title-bg);
-  font-size: 18px;
+
+  border-radius: 10px;
+
+  font-size: 1.2rem;
+  font-weight: 700;
   color: var(--title-color);
 }
 
 .line {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+
+  margin-top: 10px;
   background-color: var(--notes-bg);
+  border-radius: 10px;
+
   color: var(--notes-text-color);
 }
 
@@ -23,32 +29,19 @@
   padding: 15px 10px;
 }
 
-.icon {
-  width: 50px;
+.category-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: var(--accent);
 }
 
-.name {
-  width: 176px;
-}
-
-.created {
-  width: 176px;
-}
-
-.category {
-  width: 176px;
-}
-
-.content {
-  width: 176px;
-}
-
-.dates {
-  width: 176px;
-}
-
-.edit,
-.delete,
-.archive {
-  width: 30px;
+.category-icon > img {
+  width: 25px;
+  height: 25px;
 }

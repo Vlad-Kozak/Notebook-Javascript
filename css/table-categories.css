@@ -1,0 +1,20 @@
+.table-categories .category {
+  font-weight: 700;
+  color: var(--notes-title-color);
+}
+
+.table-categories .icon {
+  width: 50px;
+}
+
+.table-categories .category {
+  width: 300px;
+}
+
+.table-categories .active {
+  width: 150px;
+}
+
+.table-categories .archive {
+  width: 150px;
+}

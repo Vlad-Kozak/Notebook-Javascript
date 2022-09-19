@@ -12,20 +12,24 @@
       <div class="container">
         <div class="table table-notes">
           <div class="titles">
-            <div class="title icon">Icon</div>
+            <div class="title icon"></div>
             <div class="title name">Name</div>
             <div class="title created">Created</div>
             <div class="title category">Category</div>
             <div class="title content">Content</div>
             <div class="title dates">Dates</div>
-            <div class="title edit">Edit</div>
-            <div class="title archive">Archive</div>
-            <div class="title delete">Delete</div>
+            <div class="title edit"></div>
+            <div class="title archive"></div>
+            <div class="title delete"></div>
           </div>
 
-          <div class="lines">
-            <div class="line">
-              <div class="field icon">X</div>
+          <ul class="lines table-notes-lines-js">
+            <!-- <li class="line">
+              <div class="field icon">
+                <div class="category-icon">
+                  <img src="./images/idea.svg" alt="" />
+                </div>
+              </div>
               <div class="field name">Alfreds Futterkiste</div>
               <div class="field created">21.21.2212</div>
               <div class="field category">Lorem, ipsum.</div>
@@ -46,67 +50,143 @@
                   <img class="btn-icon" src="./images/delete.svg" alt="" />
                 </button>
               </div>
-            </div>
-          </div>
+            </li> -->
+          </ul>
         </div>
-        <button class="btn add-btn" type="button">Create Note</button>
+        <button class="btn add-btn add-btn-js" type="button">
+          Create Note
+        </button>
+        <div class="create-note-modal">
+          <form class="create-note-form">
+            <label class="create-name-label">
+              Name
+              <input class="create-name-input" type="text" />
+            </label>
+            <div class="create-category-box">
+              Category
+              <div class="create-category-wrap">
+                <label class="create-category-label">
+                  White
+                  <input
+                    class="create-category-input"
+                    name="category"
+                    type="radio"
+                    value="red"
+                  />
+                </label>
+                <label class="create-category-label">
+                  White
+                  <input
+                    class="create-category-input"
+                    name="category"
+                    type="radio"
+                    value="red"
+                  />
+                </label>
+                <label class="create-category-label">
+                  White
+                  <input
+                    class="create-category-input"
+                    name="category"
+                    type="radio"
+                    value="red"
+                  />
+                </label>
+              </div>
+            </div>
+            <label class="create-content-label">
+              Content
+              <textarea class="create-content-input" name="content"></textarea>
+            </label>
+            <button class="btn-with-icon create-note-btn" type="submit">
+              <img class="create-note-btn-icon" src="./images/add.svg" alt="" />
+            </button>
+          </form>
+          <button class="close-create-note-modal-btn">
+            <img
+              class="close-create-note-modal-btn-icon"
+              src="./images/close.svg"
+              alt=""
+            />
+          </button>
+        </div>
       </div>
     </section>
 
-    <!-- <section class="archived-notes">
+    <section class="archived-notes">
       <div class="container">
-        <table class="table-archived-notes">
-          <tr class="titles">
-            <th class="title-icon">Icon</th>
-            <th class="title-name">Name</th>
-            <th class="title-created">Created</th>
-            <th class="title-category">Category</th>
-            <th class="title-content">Content</th>
-            <th class="title-dates">Dates</th>
-            <th class="title-edit">Edit</th>
-            <th class="title-archive">Archive</th>
-            <th class="title-delete">Delete</th>
-          </tr>
-          <tr class="line">
-            <td class="icon">X</td>
-            <td class="name">Alfreds Futterkiste</td>
-            <td class="created">21.21.2212</td>
-            <td class="category">Lorem, ipsum.</td>
-            <td class="content">Lorem ipsum dolor sit amet.</td>
-            <td class="dates">21.21.2212-21.21.2222</td>
-            <td class="edit">X</td>
-            <td class="archive">X</td>
-            <td class="delete">X</td>
-          </tr>
-        </table>
+        <div class="table table-archived-notes">
+          <div class="titles">
+            <div class="title icon"></div>
+            <div class="title name">Name</div>
+            <div class="title created">Created</div>
+            <div class="title category">Category</div>
+            <div class="title content">Content</div>
+            <div class="title dates">Dates</div>
+            <div class="title edit"></div>
+            <div class="title archive"></div>
+            <div class="title delete"></div>
+          </div>
+
+          <ul class="lines table-archived-notes-lines-js">
+            <!-- <li class="line">
+              <div class="field icon">
+                <div class="category-icon">
+                  <img src="./images/idea.svg" alt="" />
+                </div>
+              </div>
+              <div class="field name">Alfreds Futterkiste</div>
+              <div class="field created">21.21.2212</div>
+              <div class="field category">Lorem, ipsum.</div>
+              <div class="field content">Lorem ipsum dolor sit amet.</div>
+              <div class="field dates">21.21.2212-21.21.2222</div>
+              <div class="field edit">
+                <button class="btn-with-icon" type="button">
+                  <img class="btn-icon" src="./images/edit.svg" alt="" />
+                </button>
+              </div>
+              <div class="field archive">
+                <button class="btn-with-icon" type="button">
+                  <img class="btn-icon" src="./images/archive.svg" alt="" />
+                </button>
+              </div>
+              <div class="field delete">
+                <button class="btn-with-icon" type="button">
+                  <img class="btn-icon" src="./images/delete.svg" alt="" />
+                </button>
+              </div>
+            </li> -->
+          </ul>
+        </div>
       </div>
     </section>
 
     <section class="categories">
       <div class="container">
-        <table class="table-categories">
-          <tr class="titles">
-            <th class="title-icon">Icon</th>
-            <th class="title-category">Note Category</th>
-            <th class="title-active">Active</th>
-            <th class="title-archived">Archived</th>
-          </tr>
-          <tr class="line">
-            <td class="icon">X</td>
-            <td class="name">Alfreds Futterkiste</td>
-            <td class="created">21.21.2212</td>
-            <td class="category">Lorem, ipsum.</td>
-          </tr>
-          <tr class="line">
-            <td class="icon">X</td>
-            <td class="name">Alfreds Futterkiste</td>
-            <td class="created">21.21.2212</td>
-            <td class="category">Lorem, ipsum.</td>
-          </tr>
-        </table>
-      </div>
-    </section> -->
+        <div class="table table-categories">
+          <div class="titles">
+            <div class="title icon"></div>
+            <div class="title category">NoteCategory</div>
+            <div class="title active">Active</div>
+            <div class="title archived">Archived</div>
+          </div>
 
-    <script src="./index.js" type="module"></script>
+          <ul class="lines table-categories-lines-js">
+            <!-- <li class="line">
+              <div class="field icon">
+                <div class="category-icon">
+                  <img src="./images/idea.svg" alt="" />
+                </div>
+              </div>
+              <div class="field category">Idea</div>
+              <div class="field active">32</div>
+              <div class="field archived">34</div>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <script src="./js/index.js" type="module"></script>
   </body>
 </html>

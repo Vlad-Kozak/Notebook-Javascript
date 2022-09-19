@@ -1,0 +1,96 @@
+.create-note-modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 400px;
+  height: 400px;
+
+  padding: 100px;
+  border-radius: 10px;
+
+  background-color: var(--accent);
+
+  transform: translate(-50%, -50%);
+
+  font-size: 2rem;
+  color: white;
+}
+
+.create-note-form {
+}
+
+.create-note-btn {
+  position: absolute;
+  bottom: 70px;
+  right: 130px;
+  width: 50px;
+  height: 50px;
+}
+
+.create-note-btn-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.create-name-label {
+  display: block;
+  margin-bottom: 40px;
+}
+
+.create-name-input {
+  display: block;
+  height: 20px;
+  max-width: 100%;
+
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+
+  font-size: 1.8rem;
+}
+
+.create-category-box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.create-category-label {
+  margin-right: 20px;
+
+  font-size: 1.5rem;
+}
+
+.create-category-input {
+  width: 15px;
+  height: 15px;
+}
+
+.create-content-label {
+  display: block;
+}
+
+.create-content-input {
+  display: block;
+  max-width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1.8rem;
+  resize: none;
+}
+
+.close-create-note-modal-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.close-create-note-modal-btn-icon {
+  width: 40px;
+  height: 40px;
+}

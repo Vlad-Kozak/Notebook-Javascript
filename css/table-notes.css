@@ -1,4 +1,34 @@
-.name {
+.table-notes .name {
   font-weight: 700;
   color: var(--notes-title-color);
+}
+
+.table-notes .icon {
+  width: 50px;
+}
+
+.table-notes .name {
+  width: 176px;
+}
+
+.table-notes .created {
+  width: 120px;
+}
+
+.table-notes .category {
+  width: 120px;
+}
+
+.table-notes .content {
+  width: 288px;
+}
+
+.table-notes .dates {
+  width: 176px;
+}
+
+.table-notes .edit,
+.table-notes .delete,
+.table-notes .archive {
+  width: 30px;
 }
