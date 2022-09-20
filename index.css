@@ -4,7 +4,6 @@
 @import "./css/table.css";
 @import "./css/table-notes.css";
 @import "./css/table-categories.css";
-@import "./css/table-archived-notes.css";
 @import "./css/note-modal.css";
 
 body.modal-open {
@@ -44,7 +43,8 @@ section:not(:last-child) {
   height: 30px;
 }
 
-.add-btn {
+.add-btn,
+.show-archive-btn {
   margin-left: auto;
   margin-top: 10px;
 }

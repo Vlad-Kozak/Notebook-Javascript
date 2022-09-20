@@ -1,34 +1,46 @@
-.table-notes .name {
+.archived-notes {
+  display: none;
+}
+.archived-notes.isHidden {
+  display: block;
+}
+
+.subtitle {
+  font-size: 2rem;
+  color: var(--notes-title-color);
+}
+
+.icon {
+  width: 50px;
+}
+
+.name {
+  width: 176px;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--notes-title-color);
 }
 
-.table-notes .icon {
-  width: 50px;
+.created {
+  width: 90px;
 }
 
-.table-notes .name {
-  width: 176px;
-}
-
-.table-notes .created {
+.category {
   width: 120px;
 }
 
-.table-notes .category {
-  width: 120px;
+.content {
+  width: 344px;
+  font-size: 1.1rem;
+  cursor: pointer;
 }
 
-.table-notes .content {
-  width: 288px;
+.dates {
+  width: 150px;
 }
 
-.table-notes .dates {
-  width: 176px;
-}
-
-.table-notes .edit,
-.table-notes .delete,
-.table-notes .archive {
+.edit,
+.delete,
+.archive {
   width: 30px;
 }

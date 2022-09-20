@@ -2,7 +2,7 @@ const notes = [
   {
     id: "1",
     name: "Shopping list",
-    created: "",
+    created: 1663589618048,
     categoryId: "1",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cum iure illo delectus esse et alias totam exercitationem voluptas.",
@@ -12,17 +12,17 @@ const notes = [
   {
     id: "2",
     name: "Shopping list",
-    created: "",
+    created: 1663589618048,
     categoryId: "2",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cum iure illo delectus esse et alias totam exercitationem voluptas.",
-    dates: "",
+      "I’m gonna have a dentist appointment on the 3/5/2021, I moved it from 5/5/2021",
+    dates: "3/5/2021, 5/5/2021",
     archived: false,
   },
   {
     id: "3",
     name: "Shopping list",
-    created: "",
+    created: 1663589618048,
     categoryId: "3",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cum iure illo delectus esse et alias totam exercitationem voluptas.",
@@ -32,7 +32,7 @@ const notes = [
   {
     id: "4",
     name: "Shopping list",
-    created: "",
+    created: 1663589618048,
     categoryId: "1",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cum iure illo delectus esse et alias totam exercitationem voluptas.",
@@ -42,7 +42,7 @@ const notes = [
   {
     id: "5",
     name: "Shopping list",
-    created: "",
+    created: 1663589618048,
     categoryId: "2",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cum iure illo delectus esse et alias totam exercitationem voluptas.",
@@ -52,7 +52,7 @@ const notes = [
   {
     id: "6",
     name: "Shopping list",
-    created: "",
+    created: 1663589618048,
     categoryId: "3",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cum iure illo delectus esse et alias totam exercitationem voluptas.",
@@ -62,7 +62,7 @@ const notes = [
   {
     id: "7",
     name: "Shopping list",
-    created: "",
+    created: 1663589618048,
     categoryId: "1",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cum iure illo delectus esse et alias totam exercitationem voluptas.",

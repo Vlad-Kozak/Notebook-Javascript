@@ -20,19 +20,21 @@ export function deleteNote(id) {
 }
 
 export function createNote({ name, categoryId, content }) {
+  const dates = getDatesFromText(content);
   notes.push({
     id: nanoid(),
     name,
-    created: Date.now,
+    created: Date.now(),
     categoryId,
     content,
-    dates: "",
+    dates,
     archived: false,
   });
   renderAll(notes, categories);
 }
 
 export function editNote({ id, name, categoryId, content }) {
+  const dates = getDatesFromText(content);
   const newNotes = notes.map((el) => {
     if (el.id === id) {
       return {
@@ -41,7 +43,7 @@ export function editNote({ id, name, categoryId, content }) {
         created: el.created,
         categoryId,
         content,
-        dates: el.dates,
+        dates,
         archived: el.archived,
       };
     }
@@ -70,4 +72,24 @@ export function closeModalByClickOnBackdrop(e) {
       closeModalByClickOnBackdrop
     );
   }
+}
+
+function getDatesFromText(text) {
+  const dates = [];
+
+  function searchDatesFromText(text) {
+    const index = text.indexOf("/");
+
+    if (index === -1) return;
+
+    if (text[index + 2] === "/") {
+      const date = text.slice(index - 1, index + 7);
+      dates.push(date);
+      searchDatesFromText(text.slice(index + 8, text.length));
+    } else searchDatesFromText(text.slice(index + 1, text.length));
+  }
+  searchDatesFromText(text);
+  console.log(dates);
+  if (dates.length === 0) return "";
+  return dates.join(", ");
 }

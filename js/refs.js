@@ -11,4 +11,7 @@ export const refs = {
   noteFormContent: document.querySelector(".note-form-content-label"),
   noteFormName: document.querySelector(".note-form-name-label"),
   noteFormSubmitBtn: document.querySelector(".note-form-submit"),
+  showArchiveBtn: document.querySelector(".show-archive-btn-js"),
+  sectionArchivedNotes: document.querySelector(".archived-notes"),
+  notesContent: document.querySelector(".content-js"),
 };

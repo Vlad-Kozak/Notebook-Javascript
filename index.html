@@ -9,6 +9,7 @@
   </head>
   <body>
     <section class="notes">
+      
       <div class="container">
         <div class="table table-notes">
           <div class="titles">
@@ -24,37 +25,13 @@
           </div>
 
           <ul class="lines table-notes-lines-js">
-            <!-- <li class="line">
-              <div class="field icon">
-                <div class="category-icon">
-                  <img src="./images/idea.svg" alt="" />
-                </div>
-              </div>
-              <div class="field name">Alfreds Futterkiste</div>
-              <div class="field created">21.21.2212</div>
-              <div class="field category">Lorem, ipsum.</div>
-              <div class="field content">Lorem ipsum dolor sit amet.</div>
-              <div class="field dates">21.21.2212-21.21.2222</div>
-              <div class="field edit">
-                <button class="btn-with-icon" type="button">
-                  <img class="btn-icon" src="./images/edit.svg" alt="" />
-                </button>
-              </div>
-              <div class="field archive">
-                <button class="btn-with-icon" type="button">
-                  <img class="btn-icon" src="./images/archive.svg" alt="" />
-                </button>
-              </div>
-              <div class="field delete">
-                <button class="btn-with-icon" type="button">
-                  <img class="btn-icon" src="./images/delete.svg" alt="" />
-                </button>
-              </div>
-            </li> -->
           </ul>
         </div>
         <button class="btn add-btn add-btn-js" type="button">
           Create Note
+        </button>
+        <button class="btn show-archive-btn show-archive-btn-js" type="button">
+          Show Archive
         </button>
       </div>
     </section>
@@ -62,6 +39,7 @@
     <section class="archived-notes">
       <div class="container">
         <div class="table table-archived-notes">
+          <h2 class="subtitle">Archived Notes</h2>
           <div class="titles">
             <div class="title icon"></div>
             <div class="title name">Name</div>
@@ -75,32 +53,6 @@
           </div>
 
           <ul class="lines table-archived-notes-lines-js">
-            <!-- <li class="line">
-              <div class="field icon">
-                <div class="category-icon">
-                  <img src="./images/idea.svg" alt="" />
-                </div>
-              </div>
-              <div class="field name">Alfreds Futterkiste</div>
-              <div class="field created">21.21.2212</div>
-              <div class="field category">Lorem, ipsum.</div>
-              <div class="field content">Lorem ipsum dolor sit amet.</div>
-              <div class="field dates">21.21.2212-21.21.2222</div>
-              <div class="field edit">
-                <button class="btn-with-icon" type="button">
-                  <img class="btn-icon" src="./images/edit.svg" alt="" />
-                </button>
-              </div>
-              <div class="field archive">
-                <button class="btn-with-icon" type="button">
-                  <img class="btn-icon" src="./images/archive.svg" alt="" />
-                </button>
-              </div>
-              <div class="field delete">
-                <button class="btn-with-icon" type="button">
-                  <img class="btn-icon" src="./images/delete.svg" alt="" />
-                </button>
-              </div>
             </li> -->
           </ul>
         </div>
@@ -118,16 +70,6 @@
           </div>
 
           <ul class="lines table-categories-lines-js">
-            <!-- <li class="line">
-              <div class="field icon">
-                <div class="category-icon">
-                  <img src="./images/idea.svg" alt="" />
-                </div>
-              </div>
-              <div class="field category">Idea</div>
-              <div class="field active">32</div>
-              <div class="field archived">34</div>
-            </li> -->
           </ul>
         </div>
       </div>
@@ -137,29 +79,15 @@
       <div class="note-modal">
         <form class="note-form note-form-js">
           <label class="note-form-name-label">
-            <!-- Name
-            <input class="note-form-name-input" type="text" name="name" /> -->
           </label>
           <div class="note-form-category-box">
             Category
             <div class="note-form-category-wrap note-form-category-wrap-js">
-              <!-- <label class="note-form-category-label">
-                White
-                <input
-                  class="note-form-category-input"
-                  name="category"
-                  type="radio"
-                  value="red"
-                />
-              </label> -->
             </div>
           </div>
           <label class="note-form-content-label">
-            <!-- Content
-            <textarea class="note-form-content-input" name="content"></textarea> -->
           </label>
           <button class="note-form-submit" type="submit">
-            <!-- <img class="note-form-submit-icon" src="./images/add.svg" alt="" /> -->
           </button>
         </form>
         <button class="close-note-modal-btn">

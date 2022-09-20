@@ -20,9 +20,11 @@ document.body.addEventListener("click", (e) => {
   handleDeleteNoteBtn(e);
   handleArchiveNoteBtn(e);
   handleEditNoteBtn(e);
+  handleToggleNotes(e);
 });
 
 refs.addNoteBtn.addEventListener("click", handleAddNoteBtn);
+refs.showArchiveBtn.addEventListener("click", handleShowArchiveBtn);
 
 function handleDeleteNoteBtn(e) {
   if (e.target.classList.contains("delete-btn-js")) {
@@ -38,6 +40,16 @@ function handleArchiveNoteBtn(e) {
   }
 }
 
+function handleAddNoteBtn() {
+  renderAddForm(categories);
+  toggleModal();
+  window.addEventListener("keydown", closeModalByEsc);
+  refs.closeNoteModalBtn.addEventListener("click", toggleModal);
+  refs.modalBackdrop.addEventListener("click", closeModalByClickOnBackdrop);
+  refs.noteForm.removeEventListener("submit", handleEditSubmitNoteBtn);
+  refs.noteForm.addEventListener("submit", handleAddSubmitNoteBtn);
+}
+
 function handleEditNoteBtn(e) {
   if (e.target.classList.contains("edit-btn-js")) {
     renderEditForm(notes, categories, e.target.dataset.id);
@@ -45,17 +57,9 @@ function handleEditNoteBtn(e) {
     window.addEventListener("keydown", closeModalByEsc);
     refs.closeNoteModalBtn.addEventListener("click", toggleModal);
     refs.modalBackdrop.addEventListener("click", closeModalByClickOnBackdrop);
+    refs.noteForm.removeEventListener("submit", handleAddSubmitNoteBtn);
     refs.noteForm.addEventListener("submit", handleEditSubmitNoteBtn);
   }
-}
-
-function handleAddNoteBtn() {
-  renderAddForm(categories);
-  toggleModal();
-  window.addEventListener("keydown", closeModalByEsc);
-  refs.closeNoteModalBtn.addEventListener("click", toggleModal);
-  refs.modalBackdrop.addEventListener("click", closeModalByClickOnBackdrop);
-  refs.noteForm.addEventListener("submit", handleAddSubmitNoteBtn);
 }
 
 function handleAddSubmitNoteBtn(e) {
@@ -68,7 +72,7 @@ function handleAddSubmitNoteBtn(e) {
     category.value.length === 0 ||
     content.value.trim().length === 0
   ) {
-    return console.log("error");
+    return alert("error");
   }
 
   createNote({
@@ -91,7 +95,7 @@ function handleEditSubmitNoteBtn(e) {
     category.value.length === 0 ||
     content.value.trim().length === 0
   ) {
-    return console.log("error");
+    return alert("error");
   }
 
   notes = editNote({
@@ -105,4 +109,20 @@ function handleEditSubmitNoteBtn(e) {
 
   e.target.reset();
   toggleModal();
+}
+
+function handleShowArchiveBtn() {
+  refs.sectionArchivedNotes.classList.toggle("isHidden");
+
+  if (refs.showArchiveBtn.textContent.trim() === "Show Archive") {
+    refs.showArchiveBtn.textContent = "Close Archive";
+  } else {
+    refs.showArchiveBtn.textContent = "Show Archive";
+  }
+}
+
+function handleToggleNotes(e) {
+  if (e.target.classList.contains("name-js")) {
+    toggleModal();
+  }
 }

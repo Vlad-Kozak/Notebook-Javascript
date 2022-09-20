@@ -11,13 +11,21 @@ export function makeMarkupNotes(
         <img src="${category.imageUrl}" alt="" />
       </div>
     </div>
-    <div class="field name">${name}</div>
-    <div class="field created">${created}</div>
+    <div class="field name">${
+      name.length > 20 ? name.slice(0, 20) + "..." : name
+    }</div>
+    <div class="field created">${new Date(created).toLocaleString("en-US", {
+      month: "long",
+      year: "numeric",
+      day: "numeric",
+    })}</div>
     <div class="field category">${category.name}</div>
-    <div class="field content">${
+    <div class="field content content-js">${
       content.length > 40 ? content.slice(0, 40) + "..." : content
     }</div>
-    <div class="field dates">${dates}</div>
+    <div class="field dates">${
+      dates.length > 18 ? dates.slice(0, 18) + "..." : dates
+    }</div>
     <div class="field edit">
       <button class="btn-with-icon" type="button"  >
         <img class="btn-icon edit-btn-js" src="./images/edit.svg" alt="" data-id="${id}"/>
