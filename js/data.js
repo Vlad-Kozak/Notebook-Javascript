@@ -69,17 +69,17 @@ const categories = [
   {
     id: "1",
     name: "Task",
-    imageUrl: "../images/task.svg",
+    imageUrl: "./images/task.svg",
   },
   {
     id: "2",
     name: "Random Thought",
-    imageUrl: "../images/thought.svg",
+    imageUrl: "./images/thought.svg",
   },
   {
     id: "3",
     name: "Idea",
-    imageUrl: "../images/idea.svg",
+    imageUrl: "./images/idea.svg",
   },
 ];
 
