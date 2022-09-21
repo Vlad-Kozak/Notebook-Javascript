@@ -97,6 +97,7 @@
 .note-form-content-input {
   display: block;
   width: 380px;
+  height: 200px;
   margin-bottom: 40px;
   border-radius: 10px;
   padding: 10px;
