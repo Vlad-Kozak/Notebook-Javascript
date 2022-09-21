@@ -1,19 +1,18 @@
 const notes = [
   {
     id: "1",
-    name: "Shopping list",
+    name: "Lora`s birthday",
     created: 1663589618048,
     categoryId: "1",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cum iure illo delectus esse et alias totam exercitationem voluptas.",
+    content: "Pick up the present for Lora",
     dates: "",
     archived: true,
   },
   {
     id: "2",
-    name: "Shopping list",
+    name: "Dentist",
     created: 1663589618048,
-    categoryId: "2",
+    categoryId: "1",
     content:
       "I’m gonna have a dentist appointment on the 3/5/2021, I moved it from 5/5/2021",
     dates: "3/5/2021, 5/5/2021",
@@ -21,52 +20,47 @@ const notes = [
   },
   {
     id: "3",
-    name: "Shopping list",
+    name: "Dog",
     created: 1663589618048,
     categoryId: "3",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cum iure illo delectus esse et alias totam exercitationem voluptas.",
+    content: "Make a dog house",
     dates: "",
     archived: false,
   },
   {
     id: "4",
-    name: "Shopping list",
+    name: "Education",
     created: 1663589618048,
     categoryId: "1",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cum iure illo delectus esse et alias totam exercitationem voluptas.",
+    content: "Read 5 books",
     dates: "",
     archived: false,
   },
   {
     id: "5",
-    name: "Shopping list",
+    name: "Password",
     created: 1663589618048,
     categoryId: "2",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cum iure illo delectus esse et alias totam exercitationem voluptas.",
+    content: "Superman1986",
     dates: "",
     archived: false,
   },
   {
     id: "6",
-    name: "Shopping list",
+    name: "Work",
     created: 1663589618048,
     categoryId: "3",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cum iure illo delectus esse et alias totam exercitationem voluptas.",
+    content: "Test hydrocyclone for medium pulp percentage",
     dates: "",
     archived: false,
   },
   {
     id: "7",
-    name: "Shopping list",
+    name: "Diploma",
     created: 1663589618048,
     categoryId: "1",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cum iure illo delectus esse et alias totam exercitationem voluptas.",
-    dates: "",
+    content: "Pick up a diploma from the university 30/09/2022",
+    dates: "30/09/2022",
     archived: false,
   },
 ];

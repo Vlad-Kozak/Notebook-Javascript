@@ -20,9 +20,9 @@ export function makeMarkupNotes(
       day: "numeric",
     })}</div>
     <div class="field category">${category.name}</div>
-    <div class="field content content-js">${
-      content.length > 40 ? content.slice(0, 40) + "..." : content
-    }</div>
+    <div class="field content content-js" data-id="${id}">${
+    content.length > 40 ? content.slice(0, 40) + "..." : content
+  }</div>
     <div class="field dates">${
       dates.length > 18 ? dates.slice(0, 18) + "..." : dates
     }</div>
@@ -77,7 +77,7 @@ export function makeMarkupEditForm(name, content) {
     name: `Name
           <input class="note-form-name-input" type="text" name="name" value="${name}"/>`,
     content: `Content
-            <input class="note-form-content-input" name="content" value="${content}" />`,
+            <textarea class="note-form-content-input" name="content">${content}</textarea>`,
     btnIcon: `<img class="note-form-submit-icon" src="./images/confirm.svg" alt="" />`,
   };
 }

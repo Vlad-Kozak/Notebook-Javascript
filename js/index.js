@@ -9,6 +9,7 @@ import {
   editNote,
   toggleArchiveNote,
   toggleModal,
+  toggleNote,
 } from "./actions.js";
 
 export let notes = data.notes;
@@ -20,7 +21,6 @@ document.body.addEventListener("click", (e) => {
   handleDeleteNoteBtn(e);
   handleArchiveNoteBtn(e);
   handleEditNoteBtn(e);
-  handleToggleNotes(e);
 });
 
 refs.addNoteBtn.addEventListener("click", handleAddNoteBtn);
@@ -51,7 +51,10 @@ function handleAddNoteBtn() {
 }
 
 function handleEditNoteBtn(e) {
-  if (e.target.classList.contains("edit-btn-js")) {
+  if (
+    e.target.classList.contains("edit-btn-js") ||
+    e.target.classList.contains("content-js")
+  ) {
     renderEditForm(notes, categories, e.target.dataset.id);
     toggleModal();
     window.addEventListener("keydown", closeModalByEsc);
@@ -72,7 +75,7 @@ function handleAddSubmitNoteBtn(e) {
     category.value.length === 0 ||
     content.value.trim().length === 0
   ) {
-    return alert("error");
+    return alert("Please, fill the fields");
   }
 
   createNote({
@@ -95,7 +98,7 @@ function handleEditSubmitNoteBtn(e) {
     category.value.length === 0 ||
     content.value.trim().length === 0
   ) {
-    return alert("error");
+    return alert("Please, fill the fields");
   }
 
   notes = editNote({
@@ -118,11 +121,5 @@ function handleShowArchiveBtn() {
     refs.showArchiveBtn.textContent = "Close Archive";
   } else {
     refs.showArchiveBtn.textContent = "Show Archive";
-  }
-}
-
-function handleToggleNotes(e) {
-  if (e.target.classList.contains("name-js")) {
-    toggleModal();
   }
 }

@@ -52,6 +52,10 @@ export function editNote({ id, name, categoryId, content }) {
   return newNotes;
 }
 
+export function toggleNote(id) {
+  console.log(id);
+}
+
 export function toggleModal() {
   document.body.classList.toggle("modal-open");
   refs.modalBackdrop.classList.toggle("is-hidden");
@@ -74,22 +78,51 @@ export function closeModalByClickOnBackdrop(e) {
   }
 }
 
+// function getDatesFromText(text) {
+//   const dates = [];
+
+//   function searchDatesFromText(text) {
+//     const index = text.indexOf("/");
+
+//     if (index === -1) return;
+
+//     if (text[index + 2] === "/") {
+//       const date = text.slice(index - 1, index + 7);
+//       dates.push(date);
+//       searchDatesFromText(text.slice(index + 8, text.length));
+//     } else searchDatesFromText(text.slice(index + 1, text.length));
+//   }
+//   searchDatesFromText(text);
+//   console.log(dates);
+//   if (dates.length === 0) return "";
+//   return dates.join(", ");
+// }
+
 function getDatesFromText(text) {
-  const dates = [];
+  let dates = [];
 
-  function searchDatesFromText(text) {
-    const index = text.indexOf("/");
+  const regexp1 = /\d\.\d\.\d{4}/g;
+  const regexp2 = /\d{2}\.\d{2}\.\d{4}/g;
+  const regexp3 = /\d\/\d\/\d{4}/g;
+  const regexp4 = /\d{2}\/\d{2}\/\d{4}/g;
 
-    if (index === -1) return;
+  const result1 = text.match(regexp1);
+  const result2 = text.match(regexp2);
+  const result3 = text.match(regexp3);
+  const result4 = text.match(regexp4);
 
-    if (text[index + 2] === "/") {
-      const date = text.slice(index - 1, index + 7);
-      dates.push(date);
-      searchDatesFromText(text.slice(index + 8, text.length));
-    } else searchDatesFromText(text.slice(index + 1, text.length));
+  if (result1) {
+    dates = [...dates, ...result1];
   }
-  searchDatesFromText(text);
-  console.log(dates);
-  if (dates.length === 0) return "";
+  if (result2) {
+    dates = [...dates, ...result2];
+  }
+  if (result3) {
+    dates = [...dates, ...result3];
+  }
+  if (result4) {
+    dates = [...dates, ...result4];
+  }
+
   return dates.join(", ");
 }
