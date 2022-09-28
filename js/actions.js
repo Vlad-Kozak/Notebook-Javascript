@@ -78,26 +78,6 @@ export function closeModalByClickOnBackdrop(e) {
   }
 }
 
-// function getDatesFromText(text) {
-//   const dates = [];
-
-//   function searchDatesFromText(text) {
-//     const index = text.indexOf("/");
-
-//     if (index === -1) return;
-
-//     if (text[index + 2] === "/") {
-//       const date = text.slice(index - 1, index + 7);
-//       dates.push(date);
-//       searchDatesFromText(text.slice(index + 8, text.length));
-//     } else searchDatesFromText(text.slice(index + 1, text.length));
-//   }
-//   searchDatesFromText(text);
-//   console.log(dates);
-//   if (dates.length === 0) return "";
-//   return dates.join(", ");
-// }
-
 function getDatesFromText(text) {
   let dates = [];
 
